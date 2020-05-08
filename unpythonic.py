@@ -9,20 +9,20 @@ from random import randint
 # Generate test data set
 dict1 ={}
 dict2 = {}
-for i in range(10000):
+for i in range(1000):
     dict1[i] = randint(0,255)
     dict2[i] = randint(0,255)
 
 
 def method1(dict1,dict2):
-    for i in range(10000):
-        for j in range(10000):
+    for i in range(1000):
+        for j in range(1000):
             distance_squared = (dict1[i] - dict2[j])
             
 def abs1(dict1,dict2):
-    for i in range(10000):
-        for j in range(10000):
-            abs_value = abs((dict1[i] - dict2[j]))
+    for i in range(1000):
+        for j in range(1000):
+            abs_value = abs(dict1[i] - dict2[j])
     
 """
 
@@ -32,7 +32,7 @@ from random import randint
 
 dict1 ={}
 dict2 = {}
-for i in range(10000):
+for i in range(1000):
     dict1[i] = randint(0,255)
     dict2[i] = randint(0,255)
 
@@ -46,13 +46,13 @@ def method2(dict1,dict2):
             lookup_dict[i][j] = (i-j)**2
     
     # calculate square
-    for i in range(10000):
-        for j in range(10000):
+    for i in range(1000):
+        for j in range(1000):
             distance_squared = lookup_dict[dict1[i]][dict2[j]]
             
 def abs2(dict1,dict2):
-    for i in range(10000):
-        for j in range(10000):
+    for i in range(1000):
+        for j in range(1000):
             abs_value = dict1[i]-dict2[j] if dict1[i] >= dict2[j] else dict2[j] - dict1[i]
 
 
