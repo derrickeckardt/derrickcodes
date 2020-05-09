@@ -23,6 +23,7 @@ def abs1(dict1,dict2):
     for i in range(1000):
         for j in range(1000):
             abs_value = abs(dict1[i] - dict2[j])
+
     
 """
 
@@ -56,6 +57,11 @@ def abs2(dict1,dict2):
             abs_value = dict1[i]-dict2[j] if dict1[i] >= dict2[j] else dict2[j] - dict1[i]
 
 
+def abs3(dict1,dict2):
+    for i in range(1000):
+        for j in range(1000):
+            abs_value = ((dict1[i]-dict2[j])**2)**(0.5)
+
 """
 
 t = timeit.Timer(stmt="method1(dict1,dict2)", setup=setup1)
@@ -69,6 +75,9 @@ t = timeit.Timer(stmt="abs1(dict1,dict2)", setup=setup1)
 print(t.timeit(1))
 
 t = timeit.Timer(stmt="abs2(dict1,dict2)", setup=setup2)
+print(t.timeit(1))
+
+t = timeit.Timer(stmt="abs3(dict1,dict2)", setup=setup2)
 print(t.timeit(1))
 
 
